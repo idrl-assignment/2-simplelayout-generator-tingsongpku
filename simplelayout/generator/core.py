@@ -23,8 +23,6 @@ def generate_matrix(
     x = np.zeros([board_grid, board_grid])
     for i in positions:
         cols = ((i - 1) % int(board_grid / unit_grid)) * unit_grid
-        rows = ((i - 1) // int(board_grid / unit_grid)) * unit_grid 
-        #print(i, "hang", rows, "lie", cols)
+        rows = ((i - 1) // int(board_grid / unit_grid)) * unit_grid
         x[rows:rows+unit_grid, cols:cols+unit_grid] = 1
-        #print(x)
     return x
