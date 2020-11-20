@@ -14,18 +14,18 @@ def get_options():
     args = parser.parse_args()
     if args.board_grid % args.unit_grid != 0:
         print("mod error")
-        exit()
+        #exit()
     #  positions = args.positions[:-1].split(' ')  # --positions 1 4
     print(args.positions)
     if len(args.positions) != args.unit_n:
         print("grid numbers error")
-        exit()
+        #exit()
     else:
         for pos in args.positions:
             if int(pos) >= int(args.board_grid/args.unit_grid) ** 2:
                 print("too large, error")
                 print(pos, int(args.board_grid/args.unit_grid) ** 2)
-                exit()
+                #exit()
     if not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
     return args

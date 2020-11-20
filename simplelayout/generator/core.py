@@ -22,7 +22,9 @@ def generate_matrix(
     # raise NotImplementedError  # TODO: 实现布局矩阵的生成
     x = np.zeros([board_grid, board_grid])
     for i in positions:
-        x1 = i // board_grid
-        x2 = i % board_grid - 1
-        x[x1:x1+unit_grid, x2:x2+unit_grid] = 1
+        cols = ((i - 1) % int(board_grid / unit_grid)) * unit_grid
+        rows = ((i - 1) // int(board_grid / unit_grid)) * unit_grid 
+        #print(i, "hang", rows, "lie", cols)
+        x[rows:rows+unit_grid, cols:cols+unit_grid] = 1
+        #print(x)
     return x
